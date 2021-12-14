@@ -31,11 +31,18 @@
     <!-- Treepodia HTML5 Player 3.0 Script -->
     <script type="text/javascript" src="//dxa05szpct2ws.cloudfront.net/player3/TreepodiaPlayer.js"></script>
     <script type="text/javascript">
+      function getSku() {
+        const sku = window.location.href.split('?s=')[1];
+        return sku ? sku : 'test1';
+      }
+    </script>
+    <script type="text/javascript">
       function initTreepodia(player) {
+        const sku = getSku();
         player.show({
           //Required Parameters
           account: "UA-CLALIT",
-          sku: "test1",
+          sku: sku,
           container: "treepodiaPlayerMain",
     
           // Optional Video Parameters
@@ -90,3 +97,4 @@
     -->
   </body>
 </html>
+v
